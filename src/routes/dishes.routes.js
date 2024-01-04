@@ -12,7 +12,7 @@ const dishesController = new DishesController();
 dishesRoutes.use(ensureAuthenticated);
 dishesRoutes.get('/', dishesController.index);
 dishesRoutes.get('/:id', dishesController.show);
-dishesRoutes.post('/', upload.single('image'), dishesController.create);
+dishesRoutes.post('/:id', upload.single('image'), dishesController.create);
 dishesRoutes.put('/:id', upload.single('image'), dishesController.update);
 dishesRoutes.delete('/:id', dishesController.delete);
 
