@@ -109,8 +109,8 @@ class DishesController {
 
   async delete(req, res) {
     try {
-      const { id } = request.params;
-      const user_id = request.user.id;
+      const { id } = req.params;
+      const user_id = req.user.id;
       const user = await knex('users').where({ id: user_id}).first();
       const isAdmin = user.isAdmin === 1;
 
